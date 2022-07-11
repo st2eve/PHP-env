@@ -7,9 +7,10 @@ services:
             - './src:/application'
         environment:
             - MYSQL_ROOT_PASSWORD=7ha6njmg
-            - MYSQL_DATABASE=php-playground
+            - MYSQL_DATABASE=becodeDB
             - MYSQL_USER=st2eve
-            - MYSQL_PASSWORD=playground-pass1234
+            - MYSQL_PASSWORD=7ha6njmg
+            - MYSQL_ROOT_HOST='%'
         ports:
             - '3002:3306'
 
