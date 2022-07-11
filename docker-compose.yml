@@ -6,9 +6,9 @@ services:
         volumes:
             - './src:/application'
         environment:
-            - MYSQL_ROOT_PASSWORD=pass1234
+            - MYSQL_ROOT_PASSWORD=7ha6njmg
             - MYSQL_DATABASE=php-playground
-            - MYSQL_USER=playground-user
+            - MYSQL_USER=st2eve
             - MYSQL_PASSWORD=playground-pass1234
         ports:
             - '3002:3306'
