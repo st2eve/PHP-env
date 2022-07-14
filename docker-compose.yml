@@ -10,7 +10,6 @@ services:
             - MYSQL_DATABASE=becodeDB
             - MYSQL_USER=st2eve
             - MYSQL_PASSWORD=7ha6njmg
-            - MYSQL_ROOT_HOST='%'
         ports:
             - '3002:3306'
 
