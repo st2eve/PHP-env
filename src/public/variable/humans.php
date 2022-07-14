@@ -83,5 +83,45 @@
       =
       <?php echo count($me['hobbies']) + count($bff['hobbies']); ?>
     </p>
+    <?php
+      $pronouns = array ('I', 'You', 'He/She','We', 'You', 'They');
+      $verbs = array (' code', ' codes');
+      foreach ($pronouns as $pronoun){
+    ?>
+        <p>
+        <?php if($pronoun == 'He/She'){
+            echo $pronoun.$verbs[1];
+          } ?>
+          <?php if($pronoun != 'He/She'){
+            echo $pronoun.$verbs[0];
+          }?>
+        </p>
+    <?php
+      };
+    ?>
+    <?php
+      $nb = 1;
+      while($nb <= 120){
+        print_r($nb.', ');
+        $nb++;
+      }
+    ?>
+    <br/><br/>
+    <?php
+      for($nbs = 1; $nbs <= 120; $nbs++){
+        print_r($nbs.', ');
+      }
+    ?>
+    <br/><br/>
+    <?php 
+      $firstnames = array ('Anais', 'Medhi', 'Miguel','Nicolas', 'Dorian', 'Antoine', 'Dylan', 'Tanguy', 'Mehli', 'Olivier', 'Marlène', 'Quentin', 'Lydia', 'Duc', 'Louis', 'Kevin', 'Henri', 'Semih');
+      foreach($firstnames as $firstname){
+        print_r($firstname.', ');
+      }
+    ?>
+    <br/><br/>
+    <?php 
+      
+    ?>
   </body>
 </html>
