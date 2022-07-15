@@ -4,6 +4,7 @@
   	<?php if (isset($_GET['name'])){ ?>
     	<h1>Aloha <?php echo $_GET['name']; ?>!</h1>
    	<?php } ?>
+    <h1>Arrays</h1>
     <?php
       $family = array(
         'maman' => 'Mère',
@@ -83,6 +84,7 @@
       =
       <?php echo count($me['hobbies']) + count($bff['hobbies']); ?>
     </p>
+    <h1>Loop</h1>
     <?php
       $pronouns = array ('I', 'You', 'He/She','We', 'You', 'They');
       $verbs = array (' code', ' codes');
@@ -121,7 +123,71 @@
     ?>
     <br/><br/>
     <?php 
+      $countries = array(
+        'BE' => 'Belgique', 
+        'FR' => 'France', 
+        'NL' => 'Pays-bas', 
+        'DE' => 'Allemagne', 
+        'IT' => 'Italie', 
+        'ES' => 'Espagne', 
+        'IE' => 'Irlande', 
+        'GB' => 'Angleterre', 
+        'CA' => 'Canada', 
+        'SE' => 'Suède'
+      );
+    ?>
+    <form>
+      <select>
+        <?php 
+          foreach($countries as $key => $country){
+        ?>
+          <option value="<?php print_r($key) ?>">
+            <?php print_r($country) ?>
+          </option>
+        <?php 
+          }
+        ?>
+      </select>
+    </form>
+    <h1>Functions</h1>
+    <?php 
+      $text = "According to a researcher (sic) at Cambridge University, it doesn't matter in what order
+               the letters in a word are, the only important thing is that the first and last letter be at the 
+               right place. The rest can be a total mess and you can still read it without problem. This is 
+               because the human mind does not read every letter by itself but the word as a whole.";
       
+      $textArray = str_word_count($text, 1);
+
+      foreach($textArray as $words){
+        $lettersshuffle = str_shuffle($words);
+        $space = ' ';
+        print_r($lettersshuffle.$space);
+      }
+    ?>
+    <br/>
+    <h3>Autre façon</h3>
+    <?php
+
+      $str= "According to a researcher (sic) at Cambridge University , it doesn't matter in what order 
+             the letters in a word are, the only important thing is that the first and last letter be at the 
+             right place. The rest can be a total mess and you can still read it without problem. This is 
+             because the human mind does not read every letter by itself but the word as a whole .";
+      $str= explode(" ", $str);
+
+      foreach ($str as $word){
+        echo str_shuffle($word)." ";
+      }
+    ?>
+    <br/><br/>
+    <?php
+      $string = mb_ucfirst("émile"); 
+      echo $string;
+
+      function mb_ucfirst($string, $encoding='UTF-8') {
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, mb_strlen($string, $encoding)-1, $encoding);
+        return mb_strtoupper($firstChar, $encoding) . $then;
+      }
     ?>
   </body>
 </html>
