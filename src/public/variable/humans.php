@@ -189,5 +189,23 @@
         return mb_strtoupper($firstChar, $encoding) . $then;
       }
     ?>
+    <br/><br/>
+    <?php
+      $timezone  = +2;
+      echo gmdate("j/m/y H:i:s", time() + 3600*($timezone+date("I")));
+    ?>
+    <br/><br/>
+    <?php
+      $nbs = array(12, 24, 'test');
+      foreach ($nbs as $nb) {
+        if (is_numeric($nb)) {
+          print_r($nb.', ');
+        } else {
+            echo "Error: argument is the not a number.";
+        }
+      }
+      print_r(array_sum($nbs));
+    ?>
+    <h3>Etc.</h3>
   </body>
 </html>
